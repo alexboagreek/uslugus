@@ -1,20 +1,25 @@
 .footer {
+    padding: 55px 0;
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-
-     
+        display: grid;
+        grid-template-areas: 
+        'logo .'
+        'copyright contact';
     }
     &__logo {
-        display: block;
-        margin-bottom: 42px;
+        grid-area: logo;
+    }
+    &__copyrigth{
+        grid-area: copyright;
+        align-self: flex-end;
     }
     &__contacts {
-        align-self: flex-end;
-        &-item {
-            margin-bottom: 7px;
-        }
+        grid-area: contact;
+        justify-self: end;
+    }
+    &__contacts-item {
+        margin-bottom: 7px;
     }
 
 }
