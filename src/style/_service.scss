@@ -5,9 +5,14 @@
     display: grid;
     grid-template-areas:  
         'avatar present price'
-        '. . review';
+        'contacts contacts review';
     grid-template-columns: 50px 1fr max-content;
     gap: 20px 24px;
+    margin-bottom: 32px;
+
+    &_person {
+        gap: 40px 14px;
+    }
 
     &__avatar {
         grid-area: avatar;
@@ -19,13 +24,13 @@
 
     }
     &__title {
+        font-weight: 400;
         font-size: 24px;
         margin-bottom: 10px;
 
     }
     &__name {
         font-weight: 300;
-
     }
 
     &__price {
@@ -33,23 +38,51 @@
         font-size: 24px;
         text-align: right;
     }
+    &__contacts {
+        grid-column: span 2;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__link {
+        // position: ;
+
+        &:before {
+            content: '';
+            width: 24px;
+            height: 24px;
+        }
+
+        &_phone {
+            background-image: url('img/phone.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &_mail {
+            background-image: url('img/mail.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
 
     &__review {
         grid-area: review;
         display: flex;
         gap: 16px;
-
+        justify-content: flex-end;
+        align-items: flex-end;
     }
     &__stars {
         display: flex;
         gap: 2px;
         align-items: center;
-
     }
 
     &__count-review {
-        padding: 18px;
+        padding-left: 18px;
         background: url('img/chat.svg') left/14px no-repeat;
-
     }
 }
